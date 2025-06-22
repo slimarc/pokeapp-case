@@ -1,17 +1,49 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
+  <ion-toolbar color="primary">
+    <ion-title class="title-container">
+      <span>Pokédex</span>
+      <img src="assets/icon/pokeball.png" class="toolbar-pokeball" alt="Pokeball icon">
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="main-container">
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <ion-button (click)="previousPokemon()" fill="clear" [disabled]="pokemonId <= 1">
+      <ion-icon name="arrow-back-circle" slot="icon-only" class="nav-icon"></ion-icon>
+    </ion-button>
+
+    <div class="card-container">
+      <div *ngIf="isLoading" class="spinner-container">
+        <ion-spinner name="bubbles"></ion-spinner>
+      </div>
+
+      <ion-card *ngIf="!isLoading && currentPokemon">
+        <ion-card-header>
+          <ion-card-title class="ion-text-capitalize ion-text-center">
+            {{ currentPokemon.name }}
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="ion-text-center">
+          <img [src]="currentPokemon.sprites.other['official-artwork'].front_default"
+               [alt]="currentPokemon.name"
+               class="pokemon-image" />
+
+          <ion-button expand="block" [routerLink]="['/tabs/tab2', currentPokemon.name]" class="ion-margin-top">
+            View Details
+          </ion-button>
+          <ion-button (click)="toggleFavorite()" fill="clear" color="danger" aria-label="Toggle Favorite">
+            <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <ion-button (click)="nextPokemon()" fill="clear">
+      <ion-icon name="arrow-forward-circle" slot="icon-only" class="nav-icon"></ion-icon>
+    </ion-button>
+
+  </div>
 </ion-content>
