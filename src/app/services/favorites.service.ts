@@ -11,7 +11,7 @@ export class FavoritesService {
     this.loadFavorites();
   }
 
-  private loadFavorites() {
+  public loadFavorites() {
     const storedFavorites = localStorage.getItem(this.favoritesKey);
     this.favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
   }
