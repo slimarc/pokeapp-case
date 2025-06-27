@@ -1,17 +1,32 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Tab 3
+      Favorites
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="ion-text-center ion-padding" *ngIf="isLoading">
+    <ion-spinner name="bubbles"></ion-spinner>
+  </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <div *ngIf="!isLoading && favoritePokemons.length === 0" class="ion-padding ion-text-center empty-message">
+    <ion-text>
+      <h2>Sem favoritos ainda</h2>
+      <p>Vá para Pokedex e clique no coração para favoritar seu Pokemon!</p>
+    </ion-text>
+  </div>
+
+  <ion-list *ngIf="!isLoading && favoritePokemons.length > 0">
+    <ion-item *ngFor="let pokemon of favoritePokemons" [routerLink]="['/tabs/tab2', pokemon.name]" button detail>
+      <ion-avatar slot="start">
+        <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" />
+      </ion-avatar>
+      <ion-label class="ion-text-capitalize">
+        <h2>{{ pokemon.name }}</h2>
+        <p>Height: {{ pokemon.height * 10 }} cm, Weight: {{ pokemon.weight / 10 }} kg</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
