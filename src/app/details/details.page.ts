@@ -23,9 +23,9 @@ import {
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss'],
+  selector: 'app-details',
+  templateUrl: 'details.page.html',
+  styleUrls: ['details.page.scss'],
   standalone: true,
   imports: [
     CommonModule,
@@ -48,7 +48,7 @@ import { PokemonService } from '../services/pokemon.service';
     IonProgressBar
   ]
 })
-export class Tab2Page implements OnInit {
+export class DetailsPage implements OnInit {
   pokemon: any = null;
   isLoading: boolean = false;
 

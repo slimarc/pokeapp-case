@@ -18,9 +18,9 @@ import { PokemonService } from '../services/pokemon.service';
 import { FavoritesService } from '../services/favorites.service';
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss'],
+  selector: 'app-favorites',
+  templateUrl: 'favorites.page.html',
+  styleUrls: ['favorites.page.scss'],
   standalone: true,
   imports: [
     CommonModule,
@@ -37,7 +37,7 @@ import { FavoritesService } from '../services/favorites.service';
     IonText
   ]
 })
-export class Tab3Page implements OnInit {
+export class FavoritesPage implements OnInit {
   favoritePokemons: any[] = [];
   isLoading: boolean = false;
 
@@ -50,7 +50,7 @@ export class Tab3Page implements OnInit {
     this.loadFavoritePokemons();
   }
 
-  ionViewWillEnter() {
+    ionViewWillEnter() {
     this.loadFavoritePokemons();
   }
 

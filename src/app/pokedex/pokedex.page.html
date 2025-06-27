@@ -31,7 +31,7 @@
                [alt]="currentPokemon.name"
                class="pokemon-image" />
 
-          <ion-button expand="block" [routerLink]="['/tabs/tab2', currentPokemon.name]" class="ion-margin-top">
+          <ion-button expand="block" [routerLink]="['/tabs/details', currentPokemon.name]" class="ion-margin-top">
             View Details
           </ion-button>
           <ion-button (click)="favoritesService.toggleFavorite(currentPokemon.name)" fill="clear" color="danger" aria-label="Toggle Favorite">

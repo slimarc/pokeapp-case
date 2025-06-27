@@ -19,7 +19,7 @@
   </div>
 
   <ion-list *ngIf="!isLoading && favoritePokemons.length > 0">
-    <ion-item *ngFor="let pokemon of favoritePokemons" [routerLink]="['/tabs/tab2', pokemon.name]" button detail>
+    <ion-item *ngFor="let pokemon of favoritePokemons" [routerLink]="['/tabs/details', pokemon.name]" button detail>
       <ion-avatar slot="start">
         <img [src]="pokemon.sprites.other['official-artwork'].front_default" [alt]="pokemon.name" />
       </ion-avatar>

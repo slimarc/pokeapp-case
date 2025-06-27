@@ -21,9 +21,9 @@ import { arrowBackCircle, arrowForwardCircle, heart, heartOutline } from 'ionico
 import {FavoritesService} from "../services/favorites.service";
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss'],
+  selector: 'app-pokedex',
+  templateUrl: 'pokedex.page.html',
+  styleUrls: ['pokedex.page.scss'],
   standalone: true,
   imports: [
     CommonModule,
@@ -41,7 +41,7 @@ import {FavoritesService} from "../services/favorites.service";
     RouterLink
   ],
 })
-export class Tab1Page implements OnInit {
+export class PokedexPage implements OnInit {
   pokemonId: number = 1;
   currentPokemon: any = null;
   isLoading: boolean = false;
