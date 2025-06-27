@@ -18,14 +18,15 @@ import {
   IonGrid,
   IonRow,
   IonCol,
-  IonProgressBar
+  IonProgressBar,
+  NavController
 } from '@ionic/angular/standalone';
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
   selector: 'app-details',
-  templateUrl: 'details.page.html',
-  styleUrls: ['details.page.scss'],
+  templateUrl: './details.page.html',
+  styleUrls: ['./details.page.scss'],
   standalone: true,
   imports: [
     CommonModule,
@@ -54,7 +55,8 @@ export class DetailsPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private pokemonService: PokemonService
+    private pokemonService: PokemonService,
+    private navCtrl: NavController
   ) {}
 
   ngOnInit() {
@@ -77,5 +79,9 @@ export class DetailsPage implements OnInit {
         }
       });
     }
+  }
+
+  goBack() {
+    this.navCtrl.back();
   }
 }
