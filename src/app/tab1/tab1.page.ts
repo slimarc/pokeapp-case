@@ -18,6 +18,7 @@ import { PokemonService } from "../services/pokemon.service";
 import { RouterLink } from "@angular/router";
 import { addIcons } from 'ionicons';
 import { arrowBackCircle, arrowForwardCircle, heart, heartOutline } from 'ionicons/icons';
+import {FavoritesService} from "../services/favorites.service";
 
 @Component({
   selector: 'app-tab1',
@@ -44,11 +45,11 @@ export class Tab1Page implements OnInit {
   pokemonId: number = 1;
   currentPokemon: any = null;
   isLoading: boolean = false;
-  isFavorite: boolean = false;
 
   constructor(
     private pokemonService: PokemonService,
-    private loadingCtrl: LoadingController
+    private loadingCtrl: LoadingController,
+    public favoritesService: FavoritesService
   ) {
     addIcons({ arrowBackCircle, arrowForwardCircle, heart, heartOutline });
   }
@@ -91,8 +92,4 @@ export class Tab1Page implements OnInit {
     }
   }
 
-  toggleFavorite() {
-    this.isFavorite = !this.isFavorite;
-    console.log('Favorite:', this.isFavorite);
-  }
 }

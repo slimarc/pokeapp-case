@@ -34,8 +34,8 @@
           <ion-button expand="block" [routerLink]="['/tabs/tab2', currentPokemon.name]" class="ion-margin-top">
             View Details
           </ion-button>
-          <ion-button (click)="toggleFavorite()" fill="clear" color="danger" aria-label="Toggle Favorite">
-            <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'" slot="icon-only"></ion-icon>
+          <ion-button (click)="favoritesService.toggleFavorite(currentPokemon.name)" fill="clear" color="danger" aria-label="Toggle Favorite">
+            <ion-icon [name]="favoritesService.isFavorite(currentPokemon.name) ? 'heart' : 'heart-outline'" slot="icon-only"></ion-icon>
           </ion-button>
         </ion-card-content>
       </ion-card>
