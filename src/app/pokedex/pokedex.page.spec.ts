@@ -18,10 +18,10 @@ describe('PokedexPage', () => {
 
     fixture = TestBed.createComponent(PokedexPage);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
+    fixture.detectChanges();
     expect(component).toBeTruthy();
   });
 });
