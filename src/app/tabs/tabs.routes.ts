@@ -23,7 +23,7 @@ export const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/pokedex',
+        redirectTo: 'pokedex',
         pathMatch: 'full',
       },
     ],
