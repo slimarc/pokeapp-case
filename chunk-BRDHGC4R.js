@@ -1,0 +1,1 @@
+import{C as s,b as o,c as r}from"./chunk-N7PBC7US.js";var c=(()=>{let t=class t{constructor(i){this.http=i,this.baseUrl="https://pokeapi.co/api/v2"}getPokemonListByName(i){return this.http.get(`${this.baseUrl}/pokemon/${i}`)}};t.\u0275fac=function(a){return new(a||t)(r(s))},t.\u0275prov=o({token:t,factory:t.\u0275fac,providedIn:"root"});let e=t;return e})();export{c as a};
