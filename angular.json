@@ -18,6 +18,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "deployUrl": "/pokeapp-case/",
+            "baseHref": "/pokeapp-case/",
             "outputPath": {
               "base": "www",
               "browser": ""
